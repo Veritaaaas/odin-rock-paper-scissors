@@ -10,6 +10,9 @@ function getComputerChoice()
 
 function playRound(computer_choice, player_choice)
 {
+    let player_score = document.getElementById('playerScore');
+    let computer_score = document.getElementById('computerScore');
+
     let playerSign = document.getElementById('playerSign');
     let computerSign = document.getElementById('computerSign');
 
@@ -34,24 +37,28 @@ function playRound(computer_choice, player_choice)
     else if(computer_choice === "rock" && player_choice === "paper")
     {
         player_wincount++;
+        player_score.textContent = "Player: " + player_wincount;
         return("Player wins!");
     }
 
-    else if(computer_choice === "paper" && player_choice === "scissors")
+    else if(computer_choice === "paper" && player_choice === "scissor")
     {
         player_wincount++;
+        player_score.textContent = "Player: " + player_wincount;
         return("Player wins!");
     }
 
-    else if(computer_choice === "scissors" && player_choice === "rock")
+    else if(computer_choice === "scissor" && player_choice === "rock")
     {
         player_wincount++;
+        player_score.textContent = "Player: " + player_wincount;
         return("Player wins!");
     }
 
     else
     {
         computer_wincount++;
+        computer_score.textContent = "Computer: " + computer_wincount;
         return("Computer wins!");
     }
 }
