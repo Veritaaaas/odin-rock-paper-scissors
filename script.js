@@ -1,6 +1,6 @@
 let choices = ["rock", "paper", "scissors"];
 let player_wincount = 0;
-let compuer_wincount = 0;
+let computer_wincount = 0;
 
 function getComputerChoice()
 {
@@ -10,8 +10,6 @@ function getComputerChoice()
 
 function playRound(computer_choice, player_choice)
 {
-    player_choice = player_choice.toLowerCase();
-
     if (computer_choice === player_choice)
     {
         return("It's a tie!");
@@ -37,34 +35,52 @@ function playRound(computer_choice, player_choice)
 
     else
     {
-        compuer_wincount++;
+        computer_wincount++;
         return("Computer wins!");
     }
 }
 
-function game()
+
+window.onload = function() 
 {
-    for (let i = 0; i < 5; i++)
-    {
-        let player_choice = prompt("Rock, Paper, or Scissors?");
-        let computer_choice = getComputerChoice();
-        console.log(playRound(computer_choice, player_choice));
-    }
+let rockButton = document.getElementById('rock');
+let paperButton = document.getElementById('paper');
+let scissorsButton = document.getElementById('scissors');
 
-    if (player_wincount === compuer_wincount)
-    {
-        console.log("IT's a TIE!");
-    }
 
-    else if (player_wincount > compuer_wincount)
+rockButton.addEventListener('click', function(event) 
     {
-        console.log("You Win!");
+        let buttonValue = event.target.parentElement.value;
+        console.log(playRound(getComputerChoice(), buttonValue));
+        if (player_wincount >= 5 || computer_wincount >= 5) {
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+        }
     }
+);
 
-    else
+paperButton.addEventListener('click', function(event) 
     {
-        console.log("You Lose!");
+        let buttonValue = event.target.parentElement.value;
+        console.log(playRound(getComputerChoice(), buttonValue));
+        if (player_wincount >= 5 || computer_wincount >= 5) {
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+        }
     }
-}
+);
 
-game();
+scissorsButton.addEventListener('click', function(event)
+    {
+        let buttonValue = event.target.parentElement.value;
+        console.log(playRound(getComputerChoice(), buttonValue)); 
+        if (player_wincount >= 5 || computer_wincount >= 5) {
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+        }
+    }
+);
+};
