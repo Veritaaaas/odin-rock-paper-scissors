@@ -1,13 +1,17 @@
+//declaring variables for the game
 let choices = ["rock", "paper", "scissor"];
 let player_wincount = 0;
 let computer_wincount = 0;
 
+
+//gets a random choice from the choices array
 function getComputerChoice()
 {
     let choice = Math.floor(Math.random() * 3);
     return choices[choice];
 }
 
+//plays a round of the game, comparing the player choice to the computer choice
 function playRound(computer_choice, player_choice)
 {
     let player_score = document.getElementById('playerScore');
@@ -69,7 +73,7 @@ function playRound(computer_choice, player_choice)
     }
 }
 
-
+//receives the value of the button clicked and plays a round of the game
 window.onload = function() 
 {
 let rockButton = document.getElementById('rock');
