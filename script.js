@@ -1,4 +1,4 @@
-let choices = ["rock", "paper", "scissors"];
+let choices = ["rock", "paper", "scissor"];
 let player_wincount = 0;
 let computer_wincount = 0;
 
@@ -10,6 +10,22 @@ function getComputerChoice()
 
 function playRound(computer_choice, player_choice)
 {
+    let playerSign = document.getElementById('playerSign');
+    let computerSign = document.getElementById('computerSign');
+
+    let player_img = document.createElement('img');
+    player_img.src = player_choice + '.png';
+
+    playerSign.textContent = ''; 
+    playerSign.appendChild(player_img);
+
+    let computer_img = document.createElement('img');
+    computer_img.src = computer_choice + '.png';
+
+    computerSign.textContent = '';
+    computerSign.appendChild(computer_img);
+
+
     if (computer_choice === player_choice)
     {
         return("It's a tie!");
