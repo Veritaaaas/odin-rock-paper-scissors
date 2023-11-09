@@ -12,6 +12,7 @@ function playRound(computer_choice, player_choice)
 {
     let player_score = document.getElementById('playerScore');
     let computer_score = document.getElementById('computerScore');
+    let announce = document.getElementById('announce');
 
     let playerSign = document.getElementById('playerSign');
     let computerSign = document.getElementById('computerSign');
@@ -31,6 +32,7 @@ function playRound(computer_choice, player_choice)
 
     if (computer_choice === player_choice)
     {
+        announce.textContent = "It's a tie!";
         return("It's a tie!");
     }
 
@@ -38,12 +40,14 @@ function playRound(computer_choice, player_choice)
     {
         player_wincount++;
         player_score.textContent = "Player: " + player_wincount;
+        announce.textContent = "Player wins!";
         return("Player wins!");
     }
 
     else if(computer_choice === "paper" && player_choice === "scissor")
     {
         player_wincount++;
+        announce.textContent = "Player wins!";
         player_score.textContent = "Player: " + player_wincount;
         return("Player wins!");
     }
@@ -51,6 +55,7 @@ function playRound(computer_choice, player_choice)
     else if(computer_choice === "scissor" && player_choice === "rock")
     {
         player_wincount++;
+        announce.textContent = "Player wins!";
         player_score.textContent = "Player: " + player_wincount;
         return("Player wins!");
     }
@@ -58,6 +63,7 @@ function playRound(computer_choice, player_choice)
     else
     {
         computer_wincount++;
+        announce.textContent = "Computer wins!";
         computer_score.textContent = "Computer: " + computer_wincount;
         return("Computer wins!");
     }
