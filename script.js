@@ -73,37 +73,71 @@ let scissorsButton = document.getElementById('scissors');
 
 rockButton.addEventListener('click', function(event) 
     {
+        if (player_wincount >= 5 || computer_wincount >= 5) 
+        {
+            let playAgain = confirm("Do you want to play again?");
+            if (playAgain) 
+            {
+                location.reload();
+            }
+            else
+            {
+                rockButton.disabled = true;
+                paperButton.disabled = true;
+                scissorsButton.disabled = true;
+            }
+        }
+
         let buttonValue = event.target.parentElement.value;
         console.log(playRound(getComputerChoice(), buttonValue));
-        if (player_wincount >= 5 || computer_wincount >= 5) {
-            rockButton.disabled = true;
-            paperButton.disabled = true;
-            scissorsButton.disabled = true;
-        }
+        
     }
 );
 
 paperButton.addEventListener('click', function(event) 
     {
+        if (player_wincount >= 5 || computer_wincount >= 5) 
+        {
+            let playAgain = confirm("Do you want to play again?");
+            if (playAgain) 
+            {
+                location.reload();
+            }
+            else
+            {
+                rockButton.disabled = true;
+                paperButton.disabled = true;
+                scissorsButton.disabled = true;
+            }
+        }
+
         let buttonValue = event.target.parentElement.value;
         console.log(playRound(getComputerChoice(), buttonValue));
-        if (player_wincount >= 5 || computer_wincount >= 5) {
-            rockButton.disabled = true;
-            paperButton.disabled = true;
-            scissorsButton.disabled = true;
-        }
+        
     }
 );
 
 scissorsButton.addEventListener('click', function(event)
     {
+        if (player_wincount >= 5 || computer_wincount >= 5) 
+        {
+            let playAgain = confirm("Do you want to play again?");
+            if (playAgain) 
+            {
+                location.reload();
+            }
+            else
+            {
+                rockButton.disabled = true;
+                paperButton.disabled = true;
+                scissorsButton.disabled = true;
+            }
+        }
+
         let buttonValue = event.target.parentElement.value;
         console.log(playRound(getComputerChoice(), buttonValue)); 
-        if (player_wincount >= 5 || computer_wincount >= 5) {
-            rockButton.disabled = true;
-            paperButton.disabled = true;
-            scissorsButton.disabled = true;
-        }
+        
     }
 );
 };
+
